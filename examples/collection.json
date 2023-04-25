@@ -1,14 +1,84 @@
 {
   "stac_version": "1.0.0",
   "stac_extensions": [
-    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/template/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/contacts/v1.0.0/schema.json"
   ],
   "type": "Collection",
   "id": "collection",
   "title": "A title",
   "description": "A description",
   "license": "Apache-2.0",
+  "contacts": [
+    {
+      "name": "John Doe",
+      "positionName": "CEO",
+      "organization": "Doe Chemicals",
+      "logo": {
+        "href": "https://doe.com/images/logo.png",
+        "rel": "thumbnail",
+        "type": "image/png"
+      },
+      "contactInfo": {
+        "phone": {
+          "work": "+44123987654"
+        },
+        "email": {
+          "work": "john@doe.com"
+        },
+        "address": {
+          "work": {
+            "deliveryPoint": "Example Street 1",
+            "city": "London",
+            "postalCode": "E1 7AY",
+            "country": "United Kingdom"
+          }
+        }
+      },
+      "url": {
+        "href": "https://doe.com",
+        "rel": "about",
+        "type": "text/html",
+        "title": "Homepage of Doe Chemicals"
+      },
+      "roles": [
+        "responsible"
+      ]
+    },
+    {
+      "name": "Doe Chemicals Support",
+      "positionName": "Support Team",
+      "logo": {
+        "href": "https://doe.com/images/logo.png",
+        "rel": "thumbnail",
+        "type": "image/png"
+      },
+      "contactInfo": {
+        "phone": {
+          "work": "+441231231230"
+        },
+        "email": {
+          "work": "support@doe.com"
+        },
+        "address": {
+          "work": {
+            "deliveryPoint": "c/o Support Team\nExample Street 1",
+            "city": "London",
+            "postalCode": "E1 7AY",
+            "country": "United Kingdom"
+          }
+        }
+      },
+      "url": {
+        "href": "https://support.doe.com",
+        "rel": "about",
+        "type": "text/html",
+        "title": "Support of Doe Chemicals"
+      },
+      "roles": [
+        "support"
+      ]
+    }
+  ],
   "extent": {
     "spatial": {
       "bbox": [
@@ -27,37 +97,6 @@
           null
         ]
       ]
-    }
-  },
-  "template:new_field": "test",
-  "template:xyz": {
-    "x": 1,
-    "y": 2,
-    "z": 3
-  },
-  "template:another_one": [
-    1,
-    2,
-    3
-  ],
-  "assets": {
-    "example": {
-      "href": "https://example.com/examples/file.xyz",
-      "template:new_field": "test"
-    }
-  },
-  "item_assets": {
-    "data": {
-      "roles": [
-        "data"
-      ],
-      "template:new_field": "test"
-    }
-  },
-  "summaries": {
-    "datetime": {
-      "minimum": "2015-06-23T00:00:00Z",
-      "maximum": "2019-07-10T13:44:56Z"
     }
   },
   "links": [

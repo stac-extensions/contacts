@@ -1,17 +1,16 @@
-# Template Extension Specification
+# Contacts Extension Specification
 
-- **Title:** Template
-- **Identifier:** <https://stac-extensions.github.io/template/v1.0.0/schema.json>
-- **Field Name Prefix:** template
-- **Scope:** Item, Collection
+- **Title:** Contacts
+- **Identifier:** <https://stac-extensions.github.io/contacts/v1.0.0/schema.json>
+- **Field Name Prefix:** -
+- **Scope:** Item, Catalog, Collection
 - **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/tree/master/extensions/README.md#extension-maturity):** Proposal
-- **Owner**: @your-gh-handles @person2
+- **Owner**: @m-mohr
 
-This document explains the Template Extension to the [SpatioTemporal Asset Catalog](https://github.com/radiantearth/stac-spec) (STAC) specification.
+This document explains the Contacts Extension to the [SpatioTemporal Asset Catalog](https://github.com/radiantearth/stac-spec) (STAC) specification.
 This is the place to add a short introduction.
 
 - Examples:
-  - [Item example](examples/item.json): Shows the basic usage of the extension in a STAC Item
   - [Collection example](examples/collection.json): Shows the basic usage of the extension in a STAC Collection
 - [JSON Schema](json-schema/schema.json)
 - [Changelog](./CHANGELOG.md)
@@ -19,42 +18,65 @@ This is the place to add a short introduction.
 ## Fields
 
 The fields in the table below can be used in these parts of STAC documents:
-- [ ] Catalogs
+- [x] Catalogs
 - [x] Collections
 - [x] Item Properties (incl. Summaries in Collections)
-- [x] Assets (for both Collections and Items, incl. Item Asset Definitions in Collections)
+- [ ] Assets (for both Collections and Items, incl. Item Asset Definitions in Collections)
 - [ ] Links
 
-| Field Name           | Type                      | Description |
-| -------------------- | ------------------------- | ----------- |
-| template:new_field   | string                    | **REQUIRED**. Describe the required field... |
-| template:xyz         | [XYZ Object](#xyz-object) | Describe the field... |
-| template:another_one | \[number]                 | Describe the field... |
+| Field Name | Type                                  | Description |
+| ---------- | ------------------------------------- | ----------- |
+| contacts   | \[[Contact Object](#contact-object)] | **REQUIRED.** A list of contacts qualified by their role. |
 
-### Additional Field Information
+### Contact Object
 
-#### template:new_field
+The Contact Object aimed at the identification of, and means of communication with, a person responsible for the resource.
 
-This is a much more detailed description of the field `template:new_field`...
+| Field Name   | Type                            | Description |
+| ------------ | ------------------------------- | ----------- |
+| name         | string                          | **REQUIRED**. The name of the organization or the individual. |
+| identifier   | string                          | A value uniquely identifying a contact (individual or organization). |
+| positionName | string                          | Role or position of the responsible person. |
+| organization | string                          | Organization/affiliation of the individual/responsible person. In case of an organization, the name property should be used and this property is not to be used. |
+| logo         | \[[Link Object](#link-object)] | Graphic identifying a contact. |
+| contactInfo  | Map\<string, [ContactInfo Object](#contactinfo-object)> | Information required to enable contact with the responsible contact. |
+| roles        | \[string]                       | Role or position of the responsible person. |
 
-### XYZ Object
+### ContactInfo Object
 
-This is the introduction for the purpose and the content of the XYZ Object...
+Information required to enable contact with the responsible party.
 
-| Field Name  | Type   | Description |
-| ----------- | ------ | ----------- |
-| x           | number | **REQUIRED**. Describe the required field... |
-| y           | number | **REQUIRED**. Describe the required field... |
-| z           | number | **REQUIRED**. Describe the required field... |
+| Field Name          | Type                 | Description |
+| ------------------- | -------------------- | ----------- |
+| phone               | Map\<string, string> | Telephone numbers at which contact can be made. The key name indicates the type of phone number (e.g. home, work, fax, etc.). The value is the phone number itself. |
+| email               | Map\<string, string> | Email address at which contact can be made. The key name indicates the type of email address (e.g. home, work, etc.). The value of the email address itself. |
+| address             | Map\<string, [Address Object](#address-object)> | Physical location at which contact can be made. The key name indicates the type of address (e.g. office, home, etc.). The value is the address itself. |
+| url                 | Link Object | On-line information about the responsible party. |
+| hoursOfService      | string               | Time period (including time zone) when the resposible party can be contacted. |
+| contactInstructions | string               | Supplemental instructions on how or when to contact the responsible party. |
 
-## Relation types
+### Address Object
 
-The following types should be used as applicable `rel` types in the
-[Link Object](https://github.com/radiantearth/stac-spec/tree/master/item-spec/item-spec.md#link-object).
+Physical location at which contact can be made.
 
-| Type                | Description |
-| ------------------- | ----------- |
-| fancy-rel-type      | This link points to a fancy resource. |
+| Field Name         | Type   | Description |
+| ------------------ | ------ | ----------- |
+| deliveryPoint      | string | Address line for the location. |
+| city               | string | City for the location. |
+| administrativeArea | string | State or province of the location. |
+| postalCode         | string | ZIP or other postal code. |
+| country            | string | Country of the physical address. |
+
+### Link Object
+
+This object describes a relationship with another entity.
+
+| Field Name | Type   | Description |
+| ---------- | ------ | ----------- |
+| href       | string | **REQUIRED.** The actual link in the format of an URL. Relative and absolute links are both allowed. |
+| rel        | string | **REQUIRED.** Relationship between the current document and the linked document. |
+| type       | string | Media type of the referenced entity. |
+| title      | string | A human readable title to be used in rendered displays of the link. |
 
 ## Contributing
 
