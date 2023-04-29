@@ -111,55 +111,53 @@
               "logo": {
                 "$ref": "#/definitions/link"
               },
-              "contactInfo": {
+              "phone": {
                 "type": "object",
-                "properties": {
-                  "phone": {
-                    "type": "object",
-                    "additionalProperties": {
-                      "type": "string",
-                      "pattern": "^\\+[1-9]{1}[0-9]{3,14}$"
-                    }
-                  },
-                  "email": {
-                    "type": "object",
-                    "additionalProperties": {
-                      "type": "string",
-                      "format": "email"
-                    }
-                  },
-                  "address": {
-                    "type": "object",
-                    "additionalProperties": {
-                      "type": "object",
-                      "properties": {
-                        "deliveryPoint": {
-                          "type": "string"
-                        },
-                        "city": {
-                          "type": "string"
-                        },
-                        "administrativeArea": {
-                          "type": "string"
-                        },
-                        "postalCode": {
-                          "type": "string"
-                        },
-                        "country": {
-                          "type": "string"
-                        }
+                "additionalProperties": {
+                  "type": "string",
+                  "pattern": "^\\+[1-9]{1}[0-9]{3,14}$"
+                }
+              },
+              "email": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string",
+                  "format": "email"
+                }
+              },
+              "address": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object",
+                  "properties": {
+                    "deliveryPoint": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
                       }
+                    },
+                    "city": {
+                      "type": "string"
+                    },
+                    "administrativeArea": {
+                      "type": "string"
+                    },
+                    "postalCode": {
+                      "type": "string"
+                    },
+                    "country": {
+                      "type": "string"
                     }
-                  },
-                  "url": {
-                    "$ref": "#/definitions/link"
-                  },
-                  "hoursOfService": {
-                    "type": "string"
-                  },
-                  "contactInstructions": {
-                    "type": "string"
                   }
+                }
+              },
+              "url": {
+                "$ref": "#/definitions/link"
+              },
+              "contactInstructions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
                 }
               },
               "roles": {

@@ -32,40 +32,31 @@ The fields in the table below can be used in these parts of STAC documents:
 
 The Contact Object aimed at the identification of, and means of communication with, a person responsible for the resource.
 
-| Field Name   | Type                            | Description |
-| ------------ | ------------------------------- | ----------- |
-| name         | string                          | **REQUIRED**. The name of the organization or the individual. |
-| identifier   | string                          | A value uniquely identifying a contact (individual or organization). |
-| positionName | string                          | Role or position of the responsible person. |
-| organization | string                          | Organization/affiliation of the individual/responsible person. In case of an organization, the name property should be used and this property is not to be used. |
-| logo         | \[[Link Object](#link-object)] | Graphic identifying a contact. |
-| contactInfo  | Map\<string, [ContactInfo Object](#contactinfo-object)> | Information required to enable contact with the responsible contact. |
-| roles        | \[string]                       | Role or position of the responsible person. |
-
-### ContactInfo Object
-
-Information required to enable contact with the responsible party.
-
-| Field Name          | Type                 | Description |
-| ------------------- | -------------------- | ----------- |
-| phone               | Map\<string, string> | Telephone numbers at which contact can be made. The key name indicates the type of phone number (e.g. home, work, fax, etc.). The value is the phone number itself. |
-| email               | Map\<string, string> | Email address at which contact can be made. The key name indicates the type of email address (e.g. home, work, etc.). The value of the email address itself. |
+| Field Name          | Type                            | Description |
+| ------------------- | ------------------------------- | ----------- |
+| name                | string                          | **REQUIRED**. The name of the organization or the individual. |
+| identifier          | string                          | A value uniquely identifying a contact (individual or organization). |
+| positionName        | string                          | Role or position of the responsible person. |
+| organization        | string                          | Organization/affiliation of the individual/responsible person. In case of an organization, the name property should be used and this property is not to be used. |
+| logo                | [Link Object](#link-object)     | Graphic identifying a contact. The link relation should be `icon` and the media type should be an image media type. |
+| phone               | Map\<string, string>            | Telephone numbers at which contact can be made. The key name indicates the type of phone number (e.g. home, work, fax, etc.). The value is the phone number itself. |
+| email               | Map\<string, string>            | Email address at which contact can be made. The key name indicates the type of email address (e.g. home, work, etc.). The value of the email address itself. |
 | address             | Map\<string, [Address Object](#address-object)> | Physical location at which contact can be made. The key name indicates the type of address (e.g. office, home, etc.). The value is the address itself. |
-| url                 | Link Object | On-line information about the responsible party. |
-| hoursOfService      | string               | Time period (including time zone) when the resposible party can be contacted. |
-| contactInstructions | string               | Supplemental instructions on how or when to contact the responsible party. |
+| links               | \[[Link Object](#link-object)\] | On-line information about the contact. |
+| contactInstructions | string                          | Supplemental instructions on how or when to contact the responsible party. |
+| roles               | \[string]                       | Role or position of the responsible person. The link relation should be `about` media type must be set the inidicate the content type of the link (e.g. `text/html` for a company's web page versus `text/vcard` for a virtual contact file). |
 
 ### Address Object
 
 Physical location at which contact can be made.
 
-| Field Name         | Type   | Description |
-| ------------------ | ------ | ----------- |
-| deliveryPoint      | string | Address line for the location. |
-| city               | string | City for the location. |
-| administrativeArea | string | State or province of the location. |
-| postalCode         | string | ZIP or other postal code. |
-| country            | string | Country of the physical address. |
+| Field Name         | Type      | Description |
+| ------------------ | --------- | ----------- |
+| deliveryPoint      | \[string] | Address lines for the location. |
+| city               | string    | City for the location. |
+| administrativeArea | string    | State or province of the location. |
+| postalCode         | string    | ZIP or other postal code. |
+| country            | string    | Country of the physical address. |
 
 ### Link Object
 

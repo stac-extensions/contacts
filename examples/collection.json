@@ -15,23 +15,24 @@
       "organization": "Doe Chemicals",
       "logo": {
         "href": "https://doe.com/images/logo.png",
-        "rel": "thumbnail",
+        "rel": "icon",
         "type": "image/png"
       },
-      "contactInfo": {
-        "phone": {
-          "work": "+44123987654"
-        },
-        "email": {
-          "work": "john@doe.com"
-        },
-        "address": {
-          "work": {
-            "deliveryPoint": "Example Street 1",
-            "city": "London",
-            "postalCode": "E1 7AY",
-            "country": "United Kingdom"
-          }
+      "phone": {
+        "work": "+44123987654"
+      },
+      "email": {
+        "work": "john@doe.com"
+      },
+      "address": {
+        "work": {
+          "deliveryPoint": [
+            "Management Building",
+            "Example Street 1"
+          ],
+          "city": "London",
+          "postalCode": "E1 7AY",
+          "country": "United Kingdom"
         }
       },
       "url": {
@@ -52,23 +53,24 @@
         "rel": "thumbnail",
         "type": "image/png"
       },
-      "contactInfo": {
-        "phone": {
-          "work": "+441231231230"
-        },
-        "email": {
-          "work": "support@doe.com"
-        },
-        "address": {
-          "work": {
-            "deliveryPoint": "c/o Support Team\nExample Street 1",
-            "city": "London",
-            "postalCode": "E1 7AY",
-            "country": "United Kingdom"
-          }
+      "phone": {
+        "work": "+441231231230"
+      },
+      "email": {
+        "work": "support@doe.com"
+      },
+      "address": {
+        "work": {
+          "deliveryPoint": [
+            "Support Building",
+            "Example Street 1"
+          ],
+          "city": "London",
+          "postalCode": "E1 7AY",
+          "country": "United Kingdom"
         }
       },
-      "url": {
+      "links": {
         "href": "https://support.doe.com",
         "rel": "about",
         "type": "text/html",
