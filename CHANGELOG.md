@@ -16,9 +16,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+## [0.1.0] - 2023-05-12
+
+- Alignment with recent changes to contacts in OGC API - Records
+- The structure has fundamentally changed, please see the [0.1.0] for details.
+
 ## [0.0.1] - 2023-04-25
 
 - First release based on OGC API - Records
 
-[Unreleased]: <https://github.com/stac-extensions/contacts/compare/v0.0.1...HEAD>
-[0.0.1]: <https://github.com/stac-extensions/contacts/tree/0.0.1>
+[Unreleased]: <https://github.com/stac-extensions/contacts/compare/v0.1.0...HEAD>
+[0.1.0]: <https://github.com/stac-extensions/contacts/compare/v0.0.1...v0.1.0>
+[0.0.1]: <https://github.com/stac-extensions/contacts/tree/v0.0.1>

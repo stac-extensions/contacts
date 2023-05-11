@@ -1,7 +1,7 @@
 {
   "stac_version": "1.0.0",
   "stac_extensions": [
-    "https://stac-extensions.github.io/contacts/v0.0.1/schema.json"
+    "https://stac-extensions.github.io/contacts/v0.1.0/schema.json"
   ],
   "type": "Collection",
   "id": "collection",
@@ -18,29 +18,44 @@
         "rel": "icon",
         "type": "image/png"
       },
-      "phone": {
-        "work": "+44123987654"
-      },
-      "email": {
-        "work": "john@doe.com"
-      },
-      "address": {
-        "work": {
+      "phones": [
+        {
+          "value": "+44123987654",
+          "roles": [
+            "work"
+          ]
+        }
+      ],
+      "emails": [
+        {
+          "value": "john@doe.com",
+          "roles": [
+            "work"
+          ]
+        }
+      ],
+      "addresses": [
+        {
           "deliveryPoint": [
             "Management Building",
             "Example Street 1"
           ],
           "city": "London",
           "postalCode": "E1 7AY",
-          "country": "United Kingdom"
+          "country": "United Kingdom",
+          "roles": [
+            "work"
+          ]
         }
-      },
-      "url": {
-        "href": "https://doe.com",
-        "rel": "about",
-        "type": "text/html",
-        "title": "Homepage of Doe Chemicals"
-      },
+      ],
+      "links": [
+        {
+          "href": "https://doe.com",
+          "rel": "about",
+          "type": "text/html",
+          "title": "Homepage of Doe Chemicals"
+        }
+      ],
       "roles": [
         "responsible"
       ]
@@ -50,32 +65,47 @@
       "positionName": "Support Team",
       "logo": {
         "href": "https://doe.com/images/logo.png",
-        "rel": "thumbnail",
+        "rel": "icon",
         "type": "image/png"
       },
-      "phone": {
-        "work": "+441231231230"
-      },
-      "email": {
-        "work": "support@doe.com"
-      },
-      "address": {
-        "work": {
+      "phones": [
+        {
+          "value": "+441231231230",
+          "roles": [
+            "work"
+          ]
+        }
+      ],
+      "emails": [
+        {
+          "value": "support@doe.com",
+          "roles": [
+            "work"
+          ]
+        }
+      ],
+      "address": [
+        {
           "deliveryPoint": [
             "Support Building",
             "Example Street 1"
           ],
           "city": "London",
           "postalCode": "E1 7AY",
-          "country": "United Kingdom"
+          "country": "United Kingdom",
+          "roles": [
+            "work"
+          ]
         }
-      },
-      "links": {
-        "href": "https://support.doe.com",
-        "rel": "about",
-        "type": "text/html",
-        "title": "Support of Doe Chemicals"
-      },
+      ],
+      "links": [
+        {
+          "href": "https://support.doe.com",
+          "rel": "about",
+          "type": "text/html",
+          "title": "Support of Doe Chemicals"
+        }
+      ],
       "roles": [
         "support"
       ]
