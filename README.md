@@ -68,7 +68,7 @@ Currently, this object can be used in two place:
 
 | Field Name | Type      | Description |
 | ---------- | --------- | ----------- |
-| value      | \[string] | **REQUIRED**. The actual contact information, depending on the context for example the actual phone number or the email address. |
+| value      | string    | **REQUIRED**. The actual contact information, depending on the context for example the actual phone number or the email address. |
 | roles      | \[string] | The type(s) of this contact information, e.g. whether it's at work or at home. |
 
 ### Address Object
