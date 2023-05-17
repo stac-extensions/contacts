@@ -81,7 +81,7 @@ Physical location at which contact can be made.
 | city               | string    | City for the location. |
 | administrativeArea | string    | State or province of the location. |
 | postalCode         | string    | ZIP or other postal code. |
-| country            | string    | Country of the physical address. |
+| country            | string    | Country of the physical address. Could be a free-form country name or an [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements). |
 
 ### Link Object
 

@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- The country can be an ISO 3166-1 alpha-2 country code
+
 ### Changed
 
 ### Deprecated
