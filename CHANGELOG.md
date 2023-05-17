@@ -16,6 +16,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- The `value` in the Info Object had a wrong data type listed in the README.
+
 ## [0.1.0] - 2023-05-12
 
 - Alignment with recent changes to contacts in OGC API - Records
