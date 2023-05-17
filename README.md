@@ -1,7 +1,7 @@
 # Contacts Extension Specification
 
 - **Title:** Contacts
-- **Identifier:** <https://stac-extensions.github.io/contacts/v0.1.0/schema.json>
+- **Identifier:** <https://stac-extensions.github.io/contacts/v0.1.1/schema.json>
 - **Field Name Prefix:** -
 - **Scope:** Item, Catalog, Collection
 - **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/tree/master/extensions/README.md#extension-maturity):** Proposal
