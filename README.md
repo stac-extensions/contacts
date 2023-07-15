@@ -26,20 +26,21 @@ The fields in the table below can be used in these parts of STAC documents:
 - [ ] Assets (for both Collections and Items, incl. Item Asset Definitions in Collections)
 - [ ] Links
 
-| Field Name | Type                                  | Description |
-| ---------- | ------------------------------------- | ----------- |
+| Field Name | Type                                 | Description |
+| ---------- | ------------------------------------ | ----------- |
 | contacts   | \[[Contact Object](#contact-object)] | **REQUIRED.** A list of contacts qualified by their role. |
 
 ### Contact Object
 
 The Contact Object aimed at the identification of, and means of communication with, a person responsible for the resource.
+Either the field `name` or the field `organization` must be provided (or both).
 
 | Field Name          | Type                                 | Description |
 | ------------------- | ------------------------------------ | ----------- |
-| name                | string                               | **REQUIRED**. The name of the organization or the individual. |
-| identifier          | string                               | A value uniquely identifying a contact (individual or organization). |
-| positionName        | string                               | The name of the role or position of the responsible person taken from the organization's formal organizational hierarchy or chart. |
-| organization        | string                               | Organization/affiliation of the individual/responsible person. In case of an organization, the name property should be used and this property is not to be used. |
+| name                | string                               | **REQUIRED if `organization` is missing**. The name of the responsible person. |
+| organization        | string                               | **REQUIRED if `name` is missing**.Organization/affiliation of the contact. |
+| identifier          | string                               | A value uniquely identifying a contact. |
+| position            | string                               | The name of the role or position of the responsible person taken from the organization's formal organizational hierarchy or chart. |
 | logo                | [Link Object](#link-object)          | Graphic identifying a contact. The link relation must be `icon` and the media type must be an image media type. |
 | phones              | \[[Info Object](#info-object)]       | Telephone numbers at which contact can be made. |
 | emails              | \[[Info Object](#info-object)]       | Email address at which contact can be made. |

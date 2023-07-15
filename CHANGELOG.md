@@ -8,9 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- The country can be an ISO 3166-1 alpha-2 country code
+- The country can be an ISO 3166-1 country code
 
 ### Changed
+
+- The field `positionName` was renamed to `position`
+- The description of `name` has changed to only apply to individuals (for organizations use `organization`)
+- Either `name` or `organization` is required (before: `name` was required)
 
 ### Deprecated
 

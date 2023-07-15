@@ -11,7 +11,7 @@
   "contacts": [
     {
       "name": "John Doe",
-      "positionName": "CEO",
+      "position": "CEO",
       "organization": "Doe Chemicals",
       "logo": {
         "href": "https://doe.com/images/logo.png",
@@ -61,8 +61,7 @@
       ]
     },
     {
-      "name": "Doe Chemicals Support",
-      "positionName": "Support Team",
+      "organization": "Doe Chemicals - Support Team",
       "logo": {
         "href": "https://doe.com/images/logo.png",
         "rel": "icon",

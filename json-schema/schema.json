@@ -92,8 +92,17 @@
           "minItems": 1,
           "items": {
             "type": "object",
-            "required": [
-              "name"
+            "anyOf": [
+              {
+                "required": [
+                  "name"
+                ]
+              },
+              {
+                "required": [
+                  "organization"
+                ]
+              }
             ],
             "properties": {
               "identifier": {
@@ -102,7 +111,7 @@
               "name": {
                 "type": "string"
               },
-              "positionName": {
+              "position": {
                 "type": "string"
               },
               "organization": {
