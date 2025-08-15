@@ -20,6 +20,7 @@ which itself is inspired by [ISO 19115](https://www.iso.org/standard/53798.html)
 ## Fields
 
 The fields in the table below can be used in these parts of STAC documents:
+
 - [x] Catalogs
 - [x] Collections
 - [x] Item Properties (incl. Summaries in Collections)
@@ -41,6 +42,7 @@ Either the field `name` or the field `organization` must be provided (or both).
 | organization        | string                               | **REQUIRED if `name` is missing**.Organization/affiliation of the contact. |
 | identifier          | string                               | A value uniquely identifying a contact. |
 | position            | string                               | The name of the role or position of the responsible person taken from the organization's formal organizational hierarchy or chart. |
+| description         | string                               | Detailed multi-line description to fully explain the STAC entity. [CommonMark 0.29](https://commonmark.org/) syntax MAY be used for rich text representation. |
 | logo                | [Link Object](#link-object)          | Graphic identifying a contact. The link relation must be `icon` and the media type must be an image media type. |
 | phones              | \[[Info Object](#info-object)]       | Telephone numbers at which contact can be made. |
 | emails              | \[[Info Object](#info-object)]       | Email address at which contact can be made. |

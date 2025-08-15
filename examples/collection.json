@@ -12,6 +12,7 @@
     {
       "name": "John Doe",
       "position": "CEO",
+      "description": "John Doe is the CEO of Doe Chemicals, overseeing all operations and strategic direction.",
       "organization": "Doe Chemicals",
       "logo": {
         "href": "https://doe.com/images/logo.png",
@@ -62,6 +63,7 @@
     },
     {
       "organization": "Doe Chemicals - Support Team",
+      "name": "English and German speaking support available",
       "logo": {
         "href": "https://doe.com/images/logo.png",
         "rel": "icon",
