@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0] - 2025-07-15
+
 ### Added
 
 - The country can be an ISO 3166-1 country code
@@ -42,7 +44,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - First release based on OGC API - Records
 
-[Unreleased]: <https://github.com/stac-extensions/contacts/compare/v0.1.1...HEAD>
+[Unreleased]: <https://github.com/stac-extensions/contacts/compare/v1.0.0...HEAD>
+[1.0.0]: <https://github.com/stac-extensions/contacts/compare/v0.1.1...v1.0.0>
 [0.1.1]: <https://github.com/stac-extensions/contacts/compare/v0.1.0...v0.1.1>
 [0.1.0]: <https://github.com/stac-extensions/contacts/compare/v0.0.1...v0.1.0>
 [0.0.1]: <https://github.com/stac-extensions/contacts/tree/v0.0.1>
