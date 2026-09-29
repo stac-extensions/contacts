@@ -1,7 +1,7 @@
 # Contacts Extension Specification
 
 - **Title:** Contacts
-- **Identifier:** <https://stac-extensions.github.io/contacts/v1.0.0/schema.json>
+- **Identifier:** <https://stac-extensions.github.io/contacts/v1.0.1/schema.json>
 - **Field Name Prefix:** -
 - **Scope:** Item, Catalog, Collection
 - **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/tree/master/extensions/README.md#extension-maturity):** Proposal
@@ -39,7 +39,7 @@ Either the field `name` or the field `organization` must be provided (or both).
 | Field Name          | Type                                 | Description |
 | ------------------- | ------------------------------------ | ----------- |
 | name                | string                               | **REQUIRED if `organization` is missing**. The name of the responsible person. |
-| organization        | string                               | **REQUIRED if `name` is missing**.Organization/affiliation of the contact. |
+| organization        | string                               | **REQUIRED if `name` is missing**. Organization/affiliation of the contact. |
 | identifier          | string                               | A value uniquely identifying a contact. |
 | position            | string                               | The name of the role or position of the responsible person taken from the organization's formal organizational hierarchy or chart. |
 | description         | string                               | Detailed multi-line description to fully explain the STAC entity. [CommonMark 0.29](https://commonmark.org/) syntax MAY be used for rich text representation. |
@@ -49,11 +49,46 @@ Either the field `name` or the field `organization` must be provided (or both).
 | addresses           | \[[Address Object](#address-object)] | Physical location at which contact can be made. |
 | links               | \[[Link Object](#link-object)\]      | Links related to the contact. The link relation should be `about` and the media type must indicate the content type of the link (e.g. `text/html` for a company's web page versus `text/vcard` for a virtual contact file). |
 | contactInstructions | string                               | Supplemental instructions on how or when to contact the responsible party. |
-| roles               | \[string]                            | The set of named duties, job functions and/or permissions associated with this contact. See the [Provider Object](https://github.com/radiantearth/stac-spec/blob/master/item-spec/common-metadata.md#provider-object) for examples. |
+| roles               | \[string]                            | The set of named duties, job functions and/or permissions associated with this contact. See [Roles](#roles) for recommended values. |
 
 OGC API - Records also defines an additional property `hoursOfService` which is omitted from this extension
 for simplicity. If you need to add the hours of service to your contact object, it is recommended to follow
 [the schema that OGC API - Records defines](https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/contact.yaml).
+
+#### Roles
+
+The roles of a contact describe the duties, job functions and/or permissions of the contact in relation to the resource.
+The roles are not restricted to a fixed list of values, so data providers can use any role that fits their use case,
+for example `developer`, `administrator` or `support`.
+
+To improve interoperability, it is recommended to use the following role codes from
+[ISO 19115-1](https://www.iso.org/standard/53798.html) (`CI_RoleCode`) where applicable:
+
+| Role                  | Description |
+| --------------------- | ----------- |
+| resourceProvider      | Party that supplies the resource. |
+| custodian             | Party that accepts accountability and responsibility for the resource and ensures appropriate care and maintenance of the resource. |
+| owner                 | Party that owns the resource. |
+| user                  | Party who uses the resource. |
+| distributor           | Party who distributes the resource. |
+| originator            | Party who created the resource. |
+| pointOfContact        | Party who can be contacted for acquiring knowledge about or acquisition of the resource. |
+| principalInvestigator | Key party responsible for gathering information and conducting research. |
+| processor             | Party who has processed the data in a manner such that the resource has been modified. |
+| publisher             | Party who published the resource. |
+| author                | Party who authored the resource. |
+| sponsor               | Party who speaks for the resource. |
+| coAuthor              | Party who jointly authors the resource. |
+| collaborator          | Party who assists with the generation of the resource other than the principal investigator. |
+| editor                | Party who reviewed or modified the resource to improve the content. |
+| mediator              | A class of entity that mediates access to the resource and for whom the resource is intended or useful. |
+| rightsHolder          | Party owning or managing rights over the resource. |
+| contributor           | Party contributing to the resource. |
+| funder                | Party providing monetary support for the resource. |
+| stakeholder           | Party who has an interest in the resource or the use of the resource. |
+
+The roles defined for the [Provider Object](https://github.com/radiantearth/stac-spec/blob/master/commons/common-metadata.md#roles)
+in STAC (`licensor`, `producer`, `processor` and `host`) can also be used.
 
 ### Info Object
 
@@ -85,6 +120,7 @@ Physical location at which contact can be made.
 | administrativeArea | string    | State or province of the location. |
 | postalCode         | string    | ZIP or other postal code. |
 | country            | string    | Country of the physical address. Could be a free-form country name or an [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements). |
+| roles              | \[string] | The type(s) of this address, e.g. `office`, `home`, etc. |
 
 ### Link Object
 

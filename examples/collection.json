@@ -1,7 +1,7 @@
 {
   "stac_version": "1.0.0",
   "stac_extensions": [
-    "https://stac-extensions.github.io/contacts/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/contacts/v1.0.1/schema.json"
   ],
   "type": "Collection",
   "id": "collection",
@@ -58,12 +58,11 @@
         }
       ],
       "roles": [
-        "responsible"
+        "pointOfContact"
       ]
     },
     {
       "organization": "Doe Chemicals - Support Team",
-      "name": "English and German speaking support available",
       "logo": {
         "href": "https://doe.com/images/logo.png",
         "rel": "icon",
@@ -107,6 +106,7 @@
           "title": "Support of Doe Chemicals"
         }
       ],
+      "contactInstructions": "Support is available in English and German, Monday to Friday from 9:00 to 17:00 (UK time).",
       "roles": [
         "support"
       ]

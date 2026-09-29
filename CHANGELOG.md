@@ -6,6 +6,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-09-29
+
+### Changed
+
+- Recommended roles for contacts are now defined in the extension (based on ISO 19115-1 `CI_RoleCode`)
+  instead of referring to the STAC Provider Object [#7](https://github.com/stac-extensions/contacts/issues/7)
+
+### Fixed
+
+- `contactInstructions` is a string in the JSON Schema, as documented in the README and defined in OGC API - Records
+  (before: array of strings) [#8](https://github.com/stac-extensions/contacts/issues/8)
+- Added the missing `roles` field to the Address Object in the README
+- Fixed the example to use `contactInstructions` instead of misusing `name` for contact instructions
+
 ## [1.0.0] - 2025-07-15
 
 ### Added
@@ -44,7 +58,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - First release based on OGC API - Records
 
-[Unreleased]: <https://github.com/stac-extensions/contacts/compare/v1.0.0...HEAD>
+[Unreleased]: <https://github.com/stac-extensions/contacts/compare/v1.0.1...HEAD>
+[1.0.1]: <https://github.com/stac-extensions/contacts/compare/v1.0.0...v1.0.1>
 [1.0.0]: <https://github.com/stac-extensions/contacts/compare/v0.1.1...v1.0.0>
 [0.1.1]: <https://github.com/stac-extensions/contacts/compare/v0.1.0...v0.1.1>
 [0.1.0]: <https://github.com/stac-extensions/contacts/compare/v0.0.1...v0.1.0>
